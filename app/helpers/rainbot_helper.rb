@@ -1,0 +1,2 @@
+module RainbotHelper
+end
