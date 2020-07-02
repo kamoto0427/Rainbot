@@ -1,13 +1,14 @@
-namespace :scheduler do
+desc "This task is called by the Heroku scheduler add-on"
+task :update_feed => :environment do
   require 'line/bot'
   require 'open-uri'
   require 'kconv'
   require 'rexml/document'
 
   client ||= Line::Bot::Client.new { |config|
-  config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-  config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-}
+    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+  }
 
   url  = "https://www.drk7.jp/weather/xml/13.xml"
 
@@ -37,7 +38,7 @@ namespace :scheduler do
     end
 
     push =
-      "#{word1}\n#{word3}\n降水確率チェックしてね\n6〜12時 #{per06to12}%\n 12〜18時 #{per12to18}%\n 18〜24時 #{per18to24}\n#{word2}%"
+      "#{word1}\n#{word3}\n降水確率チェックしてね\n 6〜12時 #{per06to12}%\n 12〜18時 #{per12to18}%\n 18〜24時 #{per18to24}\n#{word2}%"
     
     user_ids = User_all.pluck(:line_id)
     message = {
