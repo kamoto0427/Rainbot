@@ -1,4 +1,4 @@
-class RainController < ApplicationController
+class RainbotController < ApplicationController
   require 'line/bot'
   require 'open-uri'
   require 'kconv'
