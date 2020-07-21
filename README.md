@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Rainbotの機能について
+Rainbotは、翌日・翌々日の降水確率を知らせてくれるラインbotです。<br>
+「明日の天気は？」などとラインbotに入力してみましょう。<br>
+6-12時・12-18時・18-24時の6時間ごとの降水確率がわかります。<br>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
